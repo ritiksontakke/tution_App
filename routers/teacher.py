@@ -2,14 +2,12 @@ from fastapi import FastAPI
 from fastapi import APIRouter
 from schemas.teacher import CreateNewAccount, LoginTeacher
 
-router = APIRouter()
+teacher_router = APIRouter()
 
-@router.post("/create-new-account")
+@teacher_router.post("/create-new-account")
 def createnewcccount(createAccount : CreateNewAccount):
-    return {
-        createAccount.full_name
-    }
+    return ("create account succefully")
 
-@router.post("/login")
+@teacher_router.post("/login")
 def LoginAccount(login : LoginTeacher):
     return("login succefully")
