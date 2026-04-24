@@ -2,6 +2,7 @@ from typing import List, Optional
 from sqlalchemy import ForeignKey, String
 from sqlalchemy.orm import mapped_column, Mapped, relationship,DeclarativeBase
 from db.database import Base
+from sqlalchemy.orm import relationship
 
 class Teacher(Base):
     __tablename__ = "teacher"
@@ -10,3 +11,5 @@ class Teacher(Base):
     full_name: Mapped[str] = mapped_column(String(30))
     email: Mapped[str] = mapped_column(String(50))   # ✅ fix
     password: Mapped[str] = mapped_column(String(255))
+
+    students = relationship("Student", back_populates="teacher")
