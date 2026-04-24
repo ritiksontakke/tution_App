@@ -3,14 +3,14 @@ from pydantic import BaseModel , EmailStr , Field
 from typing import Annotated , Optional
 
 class CreateNewStudent(BaseModel):
-    full_Name : Annotated[str, Field(min_length=2 , max_length=20)]
-    Parents_No : int
+    full_name : Annotated[str, Field(min_length=2 , max_length=20)]
+    parents_no : str
     address : str
-    roll_number : str
+    teacher_id: int
 
 class UpdateStudent(BaseModel):
     full_name : Optional[Annotated[str, Field(min_length=2, max_length=20 )]] = None
-    Parent_No : Optional[str] = None
+    parent_no : Optional[str] = None
     address : Optional[str] = None
     roll_number : Optional[int] = None
 

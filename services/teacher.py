@@ -25,5 +25,5 @@ def login_teacher(db : Session, login_data: LoginTeacher):
     return{
         "message" : "Login Succesfully",
         "teacher.id" : "teacher.id",
-        "name" : "teacher.full_name" 
+        "name" : teacher.full_name
     }

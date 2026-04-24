@@ -3,6 +3,7 @@ from routers.teacher import teacher_router
 from routers.student import student_router
 from db.database import engine, Base
 import models.teacher
+import models.student
 
 app = FastAPI()
 print(Base.metadata.tables) 

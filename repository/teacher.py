@@ -6,3 +6,8 @@ def create_teacher(db: Session, teacher):
     db.commit()
     db.refresh(teacher)
     return teacher
+
+def get_teacher_by_name(db : Session, full_name : str):
+    return db.query(Teacher).filter(
+        Teacher.full_name == full_name
+    ).filter()

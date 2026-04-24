@@ -2,7 +2,7 @@ from fastapi import APIRouter , Depends
 from sqlalchemy.orm import Session
 from schemas.teacher import CreateNewAccount, LoginTeacher
 from db.dependency import get_db
-from services.teacher import create_new_account
+from services.teacher import create_new_account , login_teacher
 
 teacher_router = APIRouter()
 
@@ -11,5 +11,5 @@ def createnewcccount(createAccount : CreateNewAccount , db : Session = Depends(g
     return create_new_account(db, createAccount)
 
 @teacher_router.post("/login")
-def LoginAccount(login : LoginTeacher):
-    return("login succefully")
+def LoginAccount(login : LoginTeacher, db :Session = Depends(get_db)):
+    return login_teacher(db, login)
