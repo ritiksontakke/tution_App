@@ -3,5 +3,5 @@ pydantic
 uvicorn
 sqlalchemy
 dotenv
-psycopg2
 routers
+psycopg2-binary
